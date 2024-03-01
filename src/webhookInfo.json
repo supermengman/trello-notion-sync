@@ -1,0 +1,9 @@
+{
+    "id": "65cc74fc4ad312df12bfe8ef",
+    "description": "trello to notion webhook",
+    "idModel": "5e1d47406228a67fe00b8d78",
+    "callbackURL": "https://webhook.site/b5d6468d-c953-4c34-b03a-3ad0a9c10903",
+    "active": true,
+    "consecutiveFailures": 0,
+    "firstConsecutiveFailDate": null
+}
