@@ -2,6 +2,7 @@ const express = require('express');
 const ngrok = require('@ngrok/ngrok');
 const dotenv = require('dotenv');
 const tools = require('./tools');
+const fetch = require('node-fetch');
 
 const app = express();
 dotenv.config();
