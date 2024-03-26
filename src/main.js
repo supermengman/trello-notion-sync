@@ -77,6 +77,23 @@ app.post('/webhook', async (req, res) => {
 
             tools.updatePageInNotion(notion, process.env.NOTION_DATABASE_ID, cardURL, updateFields);
         }
+		
+		// card name changed
+		else if (req.body.action.display.translationKey === 'action_renamed_card') {
+			console.log('Card name changed in Trello');
+			const cardURL = "https://trello.com/c/" + req.body.action.data.card.shortLink;
+			const updateFields = {
+				Name: {
+					title: [{
+						type: 'text',
+						text: {
+							content: req.body.action.data.card.name
+						}
+					}]
+				}
+			}
+			tools.updatePageInNotion(notion, process.env.NOTION_DATABASE_ID, cardURL, updateFields);
+		}
 
 		// card deleted
 		else if (req.body.action.display.translationKey === 'action_archived_card') {
